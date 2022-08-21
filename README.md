@@ -12,13 +12,23 @@ Recieved Signal Strength: Received Signal Strength Indicator (RSSI) measures how
   <img src="images_RSS_LSTM_git/RSSI_5G_raw_data.png" width=500>
 </p>
 
+<p align="center">
+  <img src="images_RSS_LSTM_git/Humidity.png" width=500>
+</p>
+
+## B. STM-based RSSI Prediction
+We used RSSI and humidity as the model inputs to predict the future RSSI values. Figure below is the forecasting results based on multivariate LSTM. It receives a series of observations (from RSS and humidity) and learns from the past observations to predict future values in the sequence. We used RSS values from our NS-3 simulation to predict the future 5G mm-Wave and 4G LTE RSSIs, separately. To evaluate the model's performance, we selected the first 90\% of the RSSI dataset for training and the remaining 10\% for testing. 
+The model includes an input layer, one LSTM layer with 100 LSTM units, and a Dropout layer with a value of 0.3. The Dropout, as its name implies, is responsible for randomly dropping neurons and units to avoid over-fitting in the neural network training process. The last layer is a fully-connected dense layer that aims to output the estimated values. The proposed model evaluation is carried out through training and validation losses calculations. Python 3.9.12 and TensorFlow 2.9.0 are employed to implement the deep LSTM model. The model is run for 40 epochs with batches size equal to 1024. Both univariate and multivariate scenarios are investiaged. In univariate case the input is RSS, while multivariate approach takes RSS and humidity as the inputs. The multivariate LSTM version showed a better performance than the univariate model. Because, in reality, the RSSI value changes as a function of these parameters. In other words, the future RSSI value not only depends on its current value but also on the current values of humidity, visibility and particle sizes.
+
+<p align="center">
+  <img src="images_RSS_LSTM_git/Univar_LSTM_forecast_RSSI_5G.png" width=500>
+</p>
 
 
-
-
-
-
-
+The two prediction models performances are compared in table below:
+<p align="center">
+  <img src="images_RSS_LSTM_git/Uni_Multi_LSTM_Compare.JPG" width=500>
+</p>
 
 
 
