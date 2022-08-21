@@ -1,7 +1,7 @@
 # RSS_LSTM_Forecast
-5G vehicle-to-vehicle Received Signal Strength Forecaster using LSTM. In this work, we use LSTM to predict future RSSI values in case of severe weather for 5G mm-Wave and 4G LTE channels. We plan to use predicted RSSI values to determine signal degradation and design an auto channel switching strategy.
-
 > This repository contains the source code for the Accepted paper named *Investigation of 5G and 4G V2V Communication Channel Performance Under Severe Weather* in the IEEE International Conference on Wireless for Space and Extreme Environments (WiSEE 2022), Winnipeg, Manitoba.
+
+5G vehicle-to-vehicle Received Signal Strength Forecaster using LSTM. In this work, we use LSTM to predict future RSSI values in case of severe weather for 5G mm-Wave and 4G LTE channels. We plan to use predicted RSSI values to determine signal degradation and design an auto channel switching strategy.
 
 Long short-term memory (LSTM) is an artificial neural network used mainly for time-dependence series. LSTM is well suited for predicting time series data. This project proposes two LSTM model (univariate and multivariate) to predict future RSSI values of 5G and 4G channels.
 
